@@ -20,7 +20,7 @@
     background-image: url('img/modal2.png');
     user-select: auto;
     padding-right: 20px;
-    height: 80%;
+    height: 85vh;
     overflow-y: auto;
     border: 1px solid #888;
     width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
@@ -157,9 +157,9 @@ font-weight: bolder;
   display: flex;
   color: white;
   user-select: auto;
-  max-height: 65%;
+  max-height: 49vh;
   overflow: auto;
-  font-size: 20px;
+  font-size: 1.2rem;
   border-radius: 10px;
   margin-top: 2%;
 }
@@ -168,13 +168,21 @@ font-weight: bolder;
   user-select: auto;
 }
 
-.modal_text::-webkit-scrollbar-thumb {
-  background: #00ffff;
-  border-radius: 20px;
-  height: 10%;
-  /* width: 2px; */
-  border: 1px solid gray;
+.modal_text::-webkit-scrollbar {
+  width: 0.6vw;
 }
+
+.modal_text::-webkit-scrollbar-thumb {
+  background: #00ffff; /* Цвет ползунка */
+  border-radius: 20px; /* Закругление */
+  border: 1px solid gray; /* Граница */
+}
+
+.modal_text::-webkit-scrollbar-track {
+  background: #3c4949;
+  border-radius: 20px;
+}
+
 
 .modal_back {
   background-size: cover;
@@ -187,8 +195,9 @@ font-weight: bolder;
 
 .modal_arrows {
   height: 15%;
-  margin-top: 36%;
-  margin-left: -7%;
+  margin-top: 35vh;
+  margin-left: -4vw;
+  height: 15vh;
   position: relative;
 }
 
