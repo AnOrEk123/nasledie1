@@ -94,6 +94,7 @@ const wrap = document.querySelector(".wrapper");
 const hero = document.querySelector(".hero");
 const modal_text = document.querySelector(".modal_text>p");
 const nameHero = document.querySelector(".nameHero");
+const lifeTime = document.querySelector(".lifeTime");
 const modal = document.getElementById("myModal");
 let modal_content = document.querySelector(".modal-content");
 const footerr = document.querySelector(".o_nas");
@@ -277,7 +278,7 @@ function setModal(text, label, img1, img2, heroSound) {
   if (isPrompt == false) {
     futureHeroPath = img1;
     realHeroPath = img2;
-    modal.style.display = "block";
+    modal.style.display = "flex";
     slider.style.display = "none";
     modal_text.innerHTML = text;
     nameHero.innerHTML = label;
@@ -779,14 +780,14 @@ changeCentryBtn1.addEventListener("click", () => updateCentury(1));
 changeCentryBtn2.addEventListener("click", () => updateCentury(-1));
 
 //памятники для будущего
-function setHero(name121) {
+function setHero(id) {
   fetch("heroes.json")
     .then((response) => response.json())
     .then((data) => {
-      const heroData = data[name121];
+      const heroData = data[id];
 
       if (!heroData) {
-        console.error(`Герой с именем ${name121} не найден в JSON`);
+        console.error(`Герой с именем ${id} не найден в JSON`);
         return;
       }
 
@@ -798,9 +799,11 @@ function setHero(name121) {
       if (!langChange) {
         modal_text.innerHTML = heroData.textRu;
         nameHero.innerHTML = heroData.nameRu;
+        lifeTime.innerHTML = heroData.lifeTimeRu;
       } else {
         modal_text.innerHTML = heroData.textBY;
         nameHero.innerHTML = heroData.nameBy;
+        lifeTime.innerHTML = heroData.lifeTimeBy;
       }
 
       modal_content.style.visibility = "visible";
@@ -848,7 +851,7 @@ document.addEventListener("DOMContentLoaded", () => {
           i,
           data[i].nameRu,
           data[i].imgCyber,
-          data[i].filter
+          data[i].filter,
         );
         mark.spawn();
       }

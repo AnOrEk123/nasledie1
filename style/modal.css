@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 .modal {
   user-select: auto;
-  display: none; /* Скрыто по умолчанию */
+    display: none; /* Скрыто по умолчанию */
     position: fixed; /* Оставаться на месте */
     z-index: 1000000; /* Сидеть на вершине */
     left: 0;
@@ -95,18 +95,6 @@
     background-size: cover;
 }
 
-.modal-content>h2{
-color: white;
-font-family: "Russo One", sans-serif;
-font-weight: normal;
-  display: flex;
-  border-radius: 10px;
-  margin-left: 50%;
-  font-size: 220%;
-  user-select: auto;
-}
-
-
 .monument-modal {
   z-index: -1;
   width: 92%;
@@ -194,20 +182,34 @@ font-weight: bolder;
 }
 
 .modal_arrows {
-  height: 15%;
   margin-top: 35vh;
   margin-left: -4vw;
-  height: 15vh;
+  max-width: 4vw;
+  max-height: 15vh;
   position: relative;
 }
 
 .nameHero{
   text-align: center;
+  color: white;
+font-family: "Russo One", sans-serif;
+font-weight: normal;
+  font-size: 220%;
+  user-select: auto;
+}
+
+.lifeTime{
+  text-align: center;
+  color: #A0F4FA;
+  font-size: 150%;
+  font-family: "Russo One", sans-serif;
+  font-weight: lighter;
 }
 
 .micro {
-  transform: scale(0.12);
+  max-width: 3vw;
+  max-height: 10vh;
   position: relative;
-  top: 40%;
-  left: 40%;
+  top: 74vh;
+  left: 30vw;
 }
