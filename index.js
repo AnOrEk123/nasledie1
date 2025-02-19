@@ -882,7 +882,6 @@ function setPastModal(text, label, img1, img2) {
     slider.style.display = "none";
     modal_text_past.innerHTML = text;
     nameMonument.innerHTML = label;
-    // modal_content_past.style.visibility = "visible";
     monument.src = img1;
   }
 }
