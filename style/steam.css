@@ -106,8 +106,8 @@
     background-color: rgba(65, 65, 65, 0.872);
     border: 2px solid rgb(88, 88, 88);
     color: rgb(255, 255, 255);
-    position: absolute;
-    /* margin-top: 2.5%; */
+    position: sticky;
+    margin-top: 2.5%;
     visibility: hidden;
     left: 55%;
     display: flex;
@@ -127,10 +127,10 @@
 
 .oblast {
     position: absolute;
-    width: 40%;
-    height: 45%;
+    width: 40vw;
+    height: 45vh;
     left: 55%;
-    top: 36%;
+    /* top: 36%; */
     background-image: url(./минская.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -447,50 +447,4 @@
 .pamyatnik23,
 .pamyatnik24 {
     display: none;
-}
-
-
-.changeCentry{
-    color: #ab958a;
-    display: flex;
-    position: relative;
-    text-align: center;
-    z-index: 10;
-    visibility: hidden;
-    float: right;
-    margin-right: 18%;
-    margin-top: 29%;
-    font-family: "Tektur", sans-serif;
-}
-
-.centry{
-    background-size: contain;
-    min-width: 150px;
-    min-height: 25px;
-    max-width: 20%;
-    background-image: url('./oblask_back.png');
-    padding-top: 3px;
-}
-
-.changeCentryBtn{
-    cursor: pointer;
-    min-height: 20px;
-    background-image: url('./oblask_back.png');
-    background-size: contain;
-    min-width: 20px;
-    max-width: 20%;
-    color: #ab958a;
-    border-left: 1px solid #966d59;
-    border-right: 1px solid #966d59;
-}
-
-.changeCentryBtn:hover{
-    color: black;
-    transition: all 0.2s ease-in-out;
-    background-image: url('./oblast_back_select.png');
-}
-
-.changeCentryBtn:active{
-    color: #ab958a;
-    transition: all 0.1s ease-in-out;
 }
