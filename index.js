@@ -114,8 +114,6 @@ const changeCentryBtn1 = document.querySelector(".changeCentry1");
 const changeCentryBtn2 = document.querySelector(".changeCentry2");
 let currentOblast = "";
 
-
-
 const categories = {
   science: document.querySelectorAll(".science"),
   med: document.querySelectorAll(".med"),
@@ -203,9 +201,9 @@ document.querySelectorAll(".showAll").forEach((button) => {
 
 function setActiveMicro(switch1) {
   if (switch1) {
-    document.querySelector(".micro").src = "./img/micro_active.png";
+    speak.src = "./img/micro_active.png";
   } else {
-    document.querySelector(".micro").src = "./img/micro.png";
+    speak.src = "./img/micro.png";
   }
 }
 
@@ -448,16 +446,14 @@ lang.addEventListener("click", () => {
       t2.innerHTML = "Запечатлеем памятники в истории";
     }
 
-    document.querySelector('.scienceb').innerHTML = 'НАУКА'
-    document.querySelector('.medb').innerHTML = 'МЕДИЦИНА'
-    document.querySelector('.warb').innerHTML = 'АРМИЯ'
-    document.querySelector('.economb').innerHTML = 'ЭКОНОМИКА'
-    document.querySelector('.sportb').innerHTML = 'СПОРТ'
-    document.querySelector('.otherb').innerHTML = 'ДРУГОЕ'
-    document.querySelector('.showAll').innerHTML = 'ПОКАЗАЦЬ ВСЕ'
-  } 
-  
-  else {
+    document.querySelector(".scienceb").innerHTML = "НАУКА";
+    document.querySelector(".medb").innerHTML = "МЕДИЦИНА";
+    document.querySelector(".warb").innerHTML = "АРМИЯ";
+    document.querySelector(".economb").innerHTML = "ЭКОНОМИКА";
+    document.querySelector(".sportb").innerHTML = "СПОРТ";
+    document.querySelector(".otherb").innerHTML = "ДРУГОЕ";
+    document.querySelector(".showAll").innerHTML = "ПОКАЗАЦЬ ВСЕ";
+  } else {
     for (let i of vern) {
       i.innerHTML = "Вярнуцца";
     }
@@ -506,13 +502,13 @@ lang.addEventListener("click", () => {
       t2.innerHTML = "Захапім помнікі ў гісторыі";
     }
 
-    document.querySelector('.scienceb').innerHTML = 'НАВУКА'
-    document.querySelector('.medb').innerHTML = 'МЕДЫЦЫНА'
-    document.querySelector('.warb').innerHTML = 'АРМІЯ'
-    document.querySelector('.economb').innerHTML = 'ЭКАНОМІКА'
-    document.querySelector('.sportb').innerHTML = 'СПОРТ'
-    document.querySelector('.otherb').innerHTML = 'ДРУГОЕ'
-    document.querySelector('.showAll').innerHTML = 'ПАКАЗАЦЬ УСЕ'
+    document.querySelector(".scienceb").innerHTML = "НАВУКА";
+    document.querySelector(".medb").innerHTML = "МЕДЫЦЫНА";
+    document.querySelector(".warb").innerHTML = "АРМІЯ";
+    document.querySelector(".economb").innerHTML = "ЭКАНОМІКА";
+    document.querySelector(".sportb").innerHTML = "СПОРТ";
+    document.querySelector(".otherb").innerHTML = "ДРУГОЕ";
+    document.querySelector(".showAll").innerHTML = "ПАКАЗАЦЬ УСЕ";
   }
   lastSteamButton.click();
 });
@@ -808,7 +804,6 @@ function setHero(id) {
 
       modal_content.style.visibility = "visible";
       hero.src = heroData.imgCyber;
-      sound = heroData.sound;
     })
     .catch((error) => console.error("Ошибка загрузки JSON:", error));
 }
@@ -851,7 +846,7 @@ document.addEventListener("DOMContentLoaded", () => {
           i,
           data[i].nameRu,
           data[i].imgCyber,
-          data[i].filter,
+          data[i].filter
         );
         mark.spawn();
       }
@@ -864,10 +859,17 @@ const modal_text_p = document.querySelector("#modal_text_p");
 const speak = document.getElementById("micro");
 
 speak.addEventListener("click", () => {
-  window.speechSynthesis.cancel();
-  setActiveMicro(true);
-  const utterance = new SpeechSynthesisUtterance(modal_text_p.innerHTML);
-  window.speechSynthesis.speak(utterance);
+  if (speak.src.includes("micro.png")) {
+    window.speechSynthesis.cancel();
+    setActiveMicro(true);
+    const utterance = new SpeechSynthesisUtterance(modal_text_p.innerHTML);
+    utterance.voice = speechSynthesis.getVoices()[4];
+    window.speechSynthesis.speak(utterance);
+  }
+  else {
+    window.speechSynthesis.cancel();
+    setActiveMicro(false);
+  }
 });
 
 //прошлое
